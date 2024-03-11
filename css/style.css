@@ -360,6 +360,16 @@ h6 {
   font-size: 1.5rem;
   line-height: 1.2
 }
+.concept__inner {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5625rem
+}
+.concept__image {
+  aspect-ratio: 870/500;
+  -o-object-fit: cover;
+  object-fit: cover
+}
 @media (min-width:47.99875em) {
   .menu__body::before {
     height: 6.25rem
@@ -377,6 +387,16 @@ h6 {
     padding-top: 6.25rem
   }
 }
+@media (min-width:61.99875em) {
+  .concept__container {
+    display: flex;
+    justify-content: flex-end
+  }
+  .concept__inner {
+    flex: 0 1 54.375rem;
+    width: 54.375rem
+  }
+}
 @media (min-width:76.875em) {
   .menu__body {
     width: 30%
@@ -387,6 +407,9 @@ h6 {
     column-gap: 1.875rem
   }
   .page__hero {
+    margin-bottom: 9.375rem
+  }
+  .page__concept {
     margin-bottom: 9.375rem
   }
   .hero {
@@ -442,6 +465,9 @@ h6 {
   .page__hero {
     margin-bottom: 2.5rem
   }
+  .page__concept {
+    margin-bottom: 2.5rem
+  }
   .hero__container {
     padding-bottom: 1.5625rem
   }
@@ -474,6 +500,9 @@ h6 {
   }
   .footer__container {
     flex-direction: column-reverse
+  }
+  .concept__inner {
+    text-align: center
   }
 }
 @media (max-width:29.99875em) and (max-width:20em) {
@@ -566,6 +595,16 @@ h6 {
   }
   @supports not (margin-bottom:clamp(2.5rem ,0.0824175824rem + 12.0879120879vw ,9.375rem)) {
     .page__hero {
+      margin-bottom: calc(2.5rem + 6.875 * (100vw - 20rem)/ 56.875)
+    }
+  }
+  @supports (margin-bottom:clamp(2.5rem ,0.0824175824rem + 12.0879120879vw ,9.375rem)) {
+    .page__concept {
+      margin-bottom: clamp(2.5rem ,.0824175824rem + 12.0879120879vw ,9.375rem)
+    }
+  }
+  @supports not (margin-bottom:clamp(2.5rem ,0.0824175824rem + 12.0879120879vw ,9.375rem)) {
+    .page__concept {
       margin-bottom: calc(2.5rem + 6.875 * (100vw - 20rem)/ 56.875)
     }
   }

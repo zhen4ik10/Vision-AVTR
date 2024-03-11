@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240311123617">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240311125605">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,16 +21,16 @@
 					<nav class="menu__body">
 						<ul class="menu__list">
 							<li class="menu__item">
-								<a href="#!" class="menu__link">CONCEPT</a>
+								<a data-goto=".concept" data-goto-speed="1000" data-goto-header href="#" class="menu__link">CONCEPT</a>
 							</li>
 							<li class="menu__item">
-								<a href="" class="menu__link">PREMIER</a>
+								<a href="#" class="menu__link">PREMIER</a>
 							</li>
 							<li class="menu__item">
-								<a href="" class="menu__link">INTERIOR & EXTERIOR</a>
+								<a href="#" class="menu__link">INTERIOR & EXTERIOR</a>
 							</li>
 							<li class="menu__item">
-								<a href="" class="menu__link">Footer</a>
+								<a href="#" data-goto=".footer" data-goto-speed="1000" data-goto-header class="menu__link">Footer</a>
 							</li>
 						</ul>
 					</nav>
@@ -50,8 +50,22 @@
 					<h4 class="hero__label">Inspered by the future</h4>
 				</div>
 			</div>
-			<!-- <h1>Concept</h1>
-<h2 class="title">Concept</h2>
+			<section class="page__concept concept">
+				<div class="concept__container">
+					<div class="concept__inner">
+						<h2 class="concept__title title">Concept</h2>
+						<div class="concept__text text">
+							<p>
+								Электромобильность в гармонии с человеком и природой. Экологичная технология
+								органических
+								аккумуляторов и продуманная операционная стратегия концепт-кара VISION AVTR.
+							</p>
+						</div>
+						<picture><source srcset="img/concept/2.webp" type="image/webp"><img src="img/concept/2.jpeg" alt="concept-image" class="concept__image"></picture>
+					</div>
+				</div>
+			</section>
+			<!-- <h2 class="title">Concept</h2>
 <p class="text">
     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse iure nesciunt eius impedit quod veritatis nihil sit
     eos aperiam praesentium obcaecati nobis est repudiandae ipsum quae, deleniti maxime dolorum repellat?
@@ -82,7 +96,7 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20240311123617"></script>
+	<script src="js/app.min.js?_v=20240311125605"></script>
 </body>
 
 </html>
