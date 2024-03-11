@@ -338,7 +338,27 @@ h6 {
   object-fit: cover
 }
 .page {
-  color: #000
+  background: #070b1b linear-gradient(180deg,#070b1b 0,#2c3270 100%)
+}
+.hero {
+  background: url(../img/hero/hero-bg.webp) center top/cover no-repeat;
+  border-radius: 25rem 25rem 0 0
+}
+.hero__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  text-align: center;
+  gap: .3125rem;
+  height: calc(100vh - 6.25rem)
+}
+.hero__title {
+  font-family: "Corporate A";
+  line-height: 1.2
+}
+.hero__label {
+  font-size: 1.5rem;
+  line-height: 1.2
 }
 @media (min-width:47.99875em) {
   .menu__body::before {
@@ -353,6 +373,9 @@ h6 {
   .footer__logo img {
     max-width: 17.8125rem
   }
+  .page__hero {
+    padding-top: 6.25rem
+  }
 }
 @media (min-width:76.875em) {
   .menu__body {
@@ -362,6 +385,15 @@ h6 {
     -webkit-column-gap: 1.875rem;
     -moz-column-gap: 1.875rem;
     column-gap: 1.875rem
+  }
+  .page__hero {
+    margin-bottom: 9.375rem
+  }
+  .hero__container {
+    padding-bottom: 3.125rem
+  }
+  .hero__title {
+    font-size: 4.5rem
   }
 }
 @media (min-width:120em) {
@@ -389,6 +421,18 @@ h6 {
   }
   .footer__logo img {
     max-width: 10.625rem
+  }
+  .page__hero {
+    padding-top: 5.625rem
+  }
+  .page__hero {
+    margin-bottom: 2.5rem
+  }
+  .hero__container {
+    padding-bottom: 1.5625rem
+  }
+  .hero__title {
+    font-size: 2.25rem
   }
 }
 @media (max-width:76.875em) {
@@ -475,6 +519,16 @@ h6 {
       max-width: calc(10.625rem + 7.1875 * (100vw - 20rem)/ 27.99875)
     }
   }
+  @supports (padding-top:clamp(5.625rem ,5.1785514978rem + 2.2322425108vw ,6.25rem)) {
+    .page__hero {
+      padding-top: clamp(5.625rem ,5.1785514978rem + 2.2322425108vw ,6.25rem)
+    }
+  }
+  @supports not (padding-top:clamp(5.625rem ,5.1785514978rem + 2.2322425108vw ,6.25rem)) {
+    .page__hero {
+      padding-top: calc(5.625rem + .625 * (100vw - 20rem)/ 27.99875)
+    }
+  }
 }
 @media (min-width:20em) and (max-width:76.875em) {
   @supports ((-moz-column-gap:clamp(0.9375rem ,0.6078296703rem + 1.6483516484vw ,1.875rem)) or (column-gap:clamp(0.9375rem ,0.6078296703rem + 1.6483516484vw ,1.875rem))) {
@@ -489,6 +543,36 @@ h6 {
       -webkit-column-gap: calc(.9375rem + .9375 * (100vw - 20rem)/ 56.875);
       -moz-column-gap: calc(.9375rem + .9375 * (100vw - 20rem)/ 56.875);
       column-gap: calc(.9375rem + .9375 * (100vw - 20rem)/ 56.875)
+    }
+  }
+  @supports (margin-bottom:clamp(2.5rem ,0.0824175824rem + 12.0879120879vw ,9.375rem)) {
+    .page__hero {
+      margin-bottom: clamp(2.5rem ,.0824175824rem + 12.0879120879vw ,9.375rem)
+    }
+  }
+  @supports not (margin-bottom:clamp(2.5rem ,0.0824175824rem + 12.0879120879vw ,9.375rem)) {
+    .page__hero {
+      margin-bottom: calc(2.5rem + 6.875 * (100vw - 20rem)/ 56.875)
+    }
+  }
+  @supports (padding-bottom:clamp(1.5625rem ,1.0130494505rem + 2.7472527473vw ,3.125rem)) {
+    .hero__container {
+      padding-bottom: clamp(1.5625rem ,1.0130494505rem + 2.7472527473vw ,3.125rem)
+    }
+  }
+  @supports not (padding-bottom:clamp(1.5625rem ,1.0130494505rem + 2.7472527473vw ,3.125rem)) {
+    .hero__container {
+      padding-bottom: calc(1.5625rem + 1.5625 * (100vw - 20rem)/ 56.875)
+    }
+  }
+  @supports (font-size:clamp(2.25rem ,1.4587912088rem + 3.956043956vw ,4.5rem)) {
+    .hero__title {
+      font-size: clamp(2.25rem ,1.4587912088rem + 3.956043956vw ,4.5rem)
+    }
+  }
+  @supports not (font-size:clamp(2.25rem ,1.4587912088rem + 3.956043956vw ,4.5rem)) {
+    .hero__title {
+      font-size: calc(2.25rem + 2.25 * (100vw - 20rem)/ 56.875)
     }
   }
 }
