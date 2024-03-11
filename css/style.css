@@ -206,6 +206,85 @@ h6 {
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg)
 }
+body::after {
+  content: "";
+  background-color: rgba(0,0,0,.5);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity .8s ease 0s;
+  pointer-events: none;
+  z-index: 149
+}
+.popup-show body::after {
+  opacity: 1
+}
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding: 30px 10px;
+  transition: visibility .8s ease 0s;
+  visibility: hidden;
+  pointer-events: none
+}
+.popup_show {
+  z-index: 150;
+  visibility: visible;
+  overflow: auto;
+  pointer-events: auto
+}
+.popup_show .popup__content {
+  visibility: visible;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  background: #070b1b linear-gradient(180deg,#070b1b 0,#2c3270 100%)
+}
+.popup__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100%;
+  flex: 1 1 auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+.popup__content {
+  visibility: hidden;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  transition: -webkit-transform .3s ease 0s;
+  transition: transform .3s ease 0s;
+  transition: transform .3s ease 0s,-webkit-transform .3s ease 0s;
+  background-color: #eee;
+  padding: 20px;
+  width: 100%;
+  max-width: 900px;
+  border-radius: 20px
+}
+.popup__content > * {
+  margin-bottom: 1.5625rem
+}
+.popup__content > *:last-child {
+  margin-bottom: 0
+}
+button.popup__close .popup__content {
+  text-align: right;
+  font-size: 2.5rem
+}
+.lock .popup__content {
+  visibility: visible
+}
+.popup__text {
+  width: 100%
+}
 .ibg {
   width: 100%;
   height: 100%;
@@ -242,6 +321,9 @@ h6 {
 .text {
   line-height: 1.2
 }
+.text p:not(:last-child) {
+  margin-bottom: 1.25rem
+}
 .button {
   border: .0625rem solid #e805ed;
   display: flex;
@@ -256,6 +338,9 @@ h6 {
   font-family: "Corporate A";
   line-height: 1.2;
   padding: .8125rem
+}
+.button--play {
+  cursor: pointer
 }
 .button--play::before {
   transition: all .3s ease-in-out;
@@ -340,6 +425,58 @@ h6 {
 .page {
   background: #070b1b linear-gradient(180deg,#070b1b 0,#2c3270 100%)
 }
+.concept__inner {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5625rem
+}
+.concept__image {
+  aspect-ratio: 870/500;
+  -o-object-fit: cover;
+  object-fit: cover;
+  width: 100%
+}
+.premier__container {
+  display: flex
+}
+.premier__content > * {
+  margin-bottom: 1.5625rem
+}
+.premier__content > *:last-child {
+  margin-bottom: 0
+}
+.premier__content img {
+  aspect-ratio: 570/400;
+  -o-object-fit: cover;
+  object-fit: cover;
+  width: 100%
+}
+.info-block > * {
+  margin-bottom: 1.5625rem
+}
+.info-block > *:last-child {
+  margin-bottom: 0
+}
+.info-block img {
+  aspect-ratio: 570/664;
+  -o-object-fit: cover;
+  object-fit: cover;
+  width: 100%;
+  border-radius: var(--border-tl) 0 0 0
+}
+.video__container img {
+  aspect-ratio: 1200/600;
+  -o-object-fit: cover;
+  object-fit: cover;
+  width: 100%;
+  border-radius: var(--border-tl) 0 0 0
+}
+.video__container > * {
+  margin-bottom: 1.5625rem
+}
+.video__container > *:last-child {
+  margin-bottom: 0
+}
 .hero {
   background: url(../img/hero/hero-bg.webp) center/cover no-repeat;
   border-radius: var(--border-tl) var(--border-tr) 0 0
@@ -360,16 +497,6 @@ h6 {
   font-size: 1.5rem;
   line-height: 1.2
 }
-.concept__inner {
-  display: flex;
-  flex-direction: column;
-  row-gap: 1.5625rem
-}
-.concept__image {
-  aspect-ratio: 870/500;
-  -o-object-fit: cover;
-  object-fit: cover
-}
 @media (min-width:47.99875em) {
   .menu__body::before {
     height: 6.25rem
@@ -385,6 +512,12 @@ h6 {
   }
   .page__hero {
     padding-top: 6.25rem
+  }
+  .premier__content {
+    flex: 1 1 50%
+  }
+  .info-block {
+    flex: 1 1 50%
   }
 }
 @media (min-width:61.99875em) {
@@ -412,6 +545,23 @@ h6 {
   .page__concept {
     margin-bottom: 9.375rem
   }
+  .page__premier {
+    margin-bottom: 9.375rem
+  }
+  .page__video {
+    margin-bottom: 9.375rem
+  }
+  .premier__container {
+    -webkit-column-gap: 3.75rem;
+    -moz-column-gap: 3.75rem;
+    column-gap: 3.75rem
+  }
+  .info-block img {
+    --border-tl: 18.75rem
+  }
+  .video__container img {
+    --border-tl: 18.75rem
+  }
   .hero {
     --border-tl: 25rem
   }
@@ -434,6 +584,12 @@ h6 {
   }
 }
 @media (max-width:30em) {
+  .info-block img {
+    --border-tl: 0.0000000625rem
+  }
+  .video__container img {
+    --border-tl: 0.0000000625rem
+  }
   .hero {
     --border-tl: 0.0000000625rem
   }
@@ -468,6 +624,17 @@ h6 {
   .page__concept {
     margin-bottom: 2.5rem
   }
+  .page__premier {
+    margin-bottom: 2.5rem
+  }
+  .page__video {
+    margin-bottom: 2.5rem
+  }
+  .premier__container {
+    -webkit-column-gap: 1.25rem;
+    -moz-column-gap: 1.25rem;
+    column-gap: 1.25rem
+  }
   .hero__container {
     padding-bottom: 1.5625rem
   }
@@ -490,6 +657,10 @@ h6 {
   }
   .menu__list {
     flex-grow: 1
+  }
+  .premier__container {
+    flex-direction: column;
+    row-gap: 3.125rem
   }
 }
 @media (max-width:29.99875em) {
@@ -608,6 +779,40 @@ h6 {
       margin-bottom: calc(2.5rem + 6.875 * (100vw - 20rem)/ 56.875)
     }
   }
+  @supports (margin-bottom:clamp(2.5rem ,0.0824175824rem + 12.0879120879vw ,9.375rem)) {
+    .page__premier {
+      margin-bottom: clamp(2.5rem ,.0824175824rem + 12.0879120879vw ,9.375rem)
+    }
+  }
+  @supports not (margin-bottom:clamp(2.5rem ,0.0824175824rem + 12.0879120879vw ,9.375rem)) {
+    .page__premier {
+      margin-bottom: calc(2.5rem + 6.875 * (100vw - 20rem)/ 56.875)
+    }
+  }
+  @supports (margin-bottom:clamp(2.5rem ,0.0824175824rem + 12.0879120879vw ,9.375rem)) {
+    .page__video {
+      margin-bottom: clamp(2.5rem ,.0824175824rem + 12.0879120879vw ,9.375rem)
+    }
+  }
+  @supports not (margin-bottom:clamp(2.5rem ,0.0824175824rem + 12.0879120879vw ,9.375rem)) {
+    .page__video {
+      margin-bottom: calc(2.5rem + 6.875 * (100vw - 20rem)/ 56.875)
+    }
+  }
+  @supports ((-moz-column-gap:clamp(1.25rem ,0.3708791209rem + 4.3956043956vw ,3.75rem)) or (column-gap:clamp(1.25rem ,0.3708791209rem + 4.3956043956vw ,3.75rem))) {
+    .premier__container {
+      -webkit-column-gap: clamp(1.25rem ,.3708791209rem + 4.3956043956vw ,3.75rem);
+      -moz-column-gap: clamp(1.25rem ,.3708791209rem + 4.3956043956vw ,3.75rem);
+      column-gap: clamp(1.25rem ,.3708791209rem + 4.3956043956vw ,3.75rem)
+    }
+  }
+  @supports not ((-moz-column-gap:clamp(1.25rem ,0.3708791209rem + 4.3956043956vw ,3.75rem)) or (column-gap:clamp(1.25rem ,0.3708791209rem + 4.3956043956vw ,3.75rem))) {
+    .premier__container {
+      -webkit-column-gap: calc(1.25rem + 2.5 * (100vw - 20rem)/ 56.875);
+      -moz-column-gap: calc(1.25rem + 2.5 * (100vw - 20rem)/ 56.875);
+      column-gap: calc(1.25rem + 2.5 * (100vw - 20rem)/ 56.875)
+    }
+  }
   @supports (padding-bottom:clamp(1.5625rem ,1.0130494505rem + 2.7472527473vw ,3.125rem)) {
     .hero__container {
       padding-bottom: clamp(1.5625rem ,1.0130494505rem + 2.7472527473vw ,3.125rem)
@@ -695,6 +900,26 @@ h6 {
   }
 }
 @media (min-width:30em) and (max-width:76.875em) {
+  @supports (--border-tl:clamp(0.0000000625rem ,-11.9999998975rem + 39.9999998667vw ,18.75rem)) {
+    .info-block img {
+      --border-tl: clamp( 0.0000000625rem , -11.9999998975rem  +  39.9999998667vw , 18.75rem )
+    }
+  }
+  @supports not (--border-tl:clamp(0.0000000625rem ,-11.9999998975rem + 39.9999998667vw ,18.75rem)) {
+    .info-block img {
+      --border-tl: calc(0.0000000625rem + 18.7499999375 * (100vw - 30rem) / 46.875)
+    }
+  }
+  @supports (--border-tl:clamp(0.0000000625rem ,-11.9999998975rem + 39.9999998667vw ,18.75rem)) {
+    .video__container img {
+      --border-tl: clamp( 0.0000000625rem , -11.9999998975rem  +  39.9999998667vw , 18.75rem )
+    }
+  }
+  @supports not (--border-tl:clamp(0.0000000625rem ,-11.9999998975rem + 39.9999998667vw ,18.75rem)) {
+    .video__container img {
+      --border-tl: calc(0.0000000625rem + 18.7499999375 * (100vw - 30rem) / 46.875)
+    }
+  }
   @supports (--border-tl:clamp(0.0000000625rem ,-15.9999998975rem + 53.3333332vw ,25rem)) {
     .hero {
       --border-tl: clamp( 0.0000000625rem , -15.9999998975rem  +  53.3333332vw , 25rem )

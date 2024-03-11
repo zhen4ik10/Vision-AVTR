@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240311125605">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240311143114">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,7 +24,7 @@
 								<a data-goto=".concept" data-goto-speed="1000" data-goto-header href="#" class="menu__link">CONCEPT</a>
 							</li>
 							<li class="menu__item">
-								<a href="#" class="menu__link">PREMIER</a>
+								<a data-goto=".premier" data-goto-speed="1000" data-goto-header href="#" class="menu__link">PREMIER</a>
 							</li>
 							<li class="menu__item">
 								<a href="#" class="menu__link">INTERIOR & EXTERIOR</a>
@@ -65,6 +65,50 @@
 					</div>
 				</div>
 			</section>
+			<section class="page__premier premier">
+				<div class="premier__container">
+					<div class="premier__content">
+						<h2 class="premier__title title">premier</h2>
+						<div class="premier__text text">
+							<p>
+								На выставке CES 2020 был представлен новый концептуальный Mercedes-Benz – VISION AVTR.
+								Футуристическая концепция
+								представленного электромобиля объединяет человека, природу и автомобиль уникальным
+								образом.
+							</p>
+							<p>
+								Ола Каллениус, председатель правления Daimler AG и Mercedes-Benz AG, в своем выступлении
+								представил концепт-кар вместе с
+								лауреатом премии Оскар и создателем фильма Аватар, Джеймсом Кэмероном.
+							</p>
+							<p>
+								Именно философия, созданная культовым режиссером в фантастическом фильме, стала основой
+								создания VISION AVTR.
+							</p>
+						</div>
+						<picture><source srcset="img/premier/3.webp" type="image/webp"><img src="img/premier/3.webp" alt="image-content"></picture>
+						<button class="button button--more">More</button>
+					</div>
+					<div class="premier__info-block info-block">
+						<picture><source srcset="img/premier/4.webp" type="image/webp"><img src="img/premier/4.jpeg" alt="info-block__image"></picture>
+						<div class="info-block__text text">
+							<p>
+								«Mercedes-Benz всегда был одним из самых технологичных премиальных брендов. Теперь
+								пришло время объединить роскошь и
+								экологичность. Ведь только так мы сможем соответствовать стандартам будущего».
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			<div class="page__video video">
+				<div class="video__container">
+					<picture><source srcset="img/video/5.webp" type="image/webp"><img src="img/video/5.jpeg" alt="image-video"></picture>
+					<a data-popup="#video" data-popup-youtube="https://youtu.be/ekgUjyWe1Yc" class="button button--play _icon-play">
+						Play Video
+					</a>
+				</div>
+			</div>
 			<!-- <h2 class="title">Concept</h2>
 <p class="text">
     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse iure nesciunt eius impedit quod veritatis nihil sit
@@ -73,9 +117,9 @@
 <button class="button button--more">
     More
 </button>
-<button class="button button--play _icon-play">
+<a class="button button--play _icon-play">
     Play Video
-</button>
+</a>
 <div class="action-social">
     <a href="#!" class="action-social__link _icon-s-twitter"></a>
     <a href="#!" class="action-social__link _icon-google"></a>
@@ -96,7 +140,16 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20240311125605"></script>
+	<div id="video" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close">Закрити</button>
+				<div data-popup-youtube-place class="popup__text">
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="js/app.min.js?_v=20240311143114"></script>
 </body>
 
 </html>
