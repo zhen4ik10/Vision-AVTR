@@ -341,8 +341,8 @@ h6 {
   background: #070b1b linear-gradient(180deg,#070b1b 0,#2c3270 100%)
 }
 .hero {
-  background: url(../img/hero/hero-bg.webp) center top/cover no-repeat;
-  border-radius: 25rem 25rem 0 0
+  background: url(../img/hero/hero-bg.webp) center/cover no-repeat;
+  border-radius: var(--border-tl) var(--border-tr) 0 0
 }
 .hero__container {
   display: flex;
@@ -389,6 +389,12 @@ h6 {
   .page__hero {
     margin-bottom: 9.375rem
   }
+  .hero {
+    --border-tl: 25rem
+  }
+  .hero {
+    --border-tr: 25rem
+  }
   .hero__container {
     padding-bottom: 3.125rem
   }
@@ -402,6 +408,14 @@ h6 {
   }
   .footer__container {
     padding-bottom: 8.125rem
+  }
+}
+@media (max-width:30em) {
+  .hero {
+    --border-tl: 0.0000000625rem
+  }
+  .hero {
+    --border-tr: 0.0000000625rem
   }
 }
 @media (max-width:20em) {
@@ -638,6 +652,28 @@ h6 {
   @supports not (row-gap:clamp(1.25rem ,-0.0001562695rem + 6.2507813477vw ,1.875rem)) {
     .footer__container {
       row-gap: calc(1.25rem + .625 * (100vw - 20rem)/ 9.99875)
+    }
+  }
+}
+@media (min-width:30em) and (max-width:76.875em) {
+  @supports (--border-tl:clamp(0.0000000625rem ,-15.9999998975rem + 53.3333332vw ,25rem)) {
+    .hero {
+      --border-tl: clamp( 0.0000000625rem , -15.9999998975rem  +  53.3333332vw , 25rem )
+    }
+  }
+  @supports not (--border-tl:clamp(0.0000000625rem ,-15.9999998975rem + 53.3333332vw ,25rem)) {
+    .hero {
+      --border-tl: calc(0.0000000625rem + 24.9999999375 * (100vw - 30rem) / 46.875)
+    }
+  }
+  @supports (--border-tr:clamp(0.0000000625rem ,-15.9999998975rem + 53.3333332vw ,25rem)) {
+    .hero {
+      --border-tr: clamp( 0.0000000625rem , -15.9999998975rem  +  53.3333332vw , 25rem )
+    }
+  }
+  @supports not (--border-tr:clamp(0.0000000625rem ,-15.9999998975rem + 53.3333332vw ,25rem)) {
+    .hero {
+      --border-tr: calc(0.0000000625rem + 24.9999999375 * (100vw - 30rem) / 46.875)
     }
   }
 }
