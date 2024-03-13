@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240313151729">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240313161846">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -107,7 +107,7 @@
 			<div class="page__video video">
 				<div class="video__container">
 					<picture><source srcset="img/video/5.webp" type="image/webp"><img src="img/video/5.jpeg" alt="image-video"></picture>
-					<button type="button" data-popup="#video" data-popup-youtube="ekgUjyWe1Yc" class="button button--play _icon-play">
+					<button type="button" data-popup="#video" data-popup-youtube="ekgUjyWe1Yc" class="video__button button button--play _icon-play">
 						Play Video
 					</button>
 				</div>
@@ -144,8 +144,8 @@
 					</div>
 					<div class="interior__block">
 						<picture><source srcset="img/interior&exterior/6.webp" type="image/webp"><img class="interior__image" src="img/interior&exterior/6.webp" alt="image-6"></picture>
-						<div class="interior__content-block">
-							<div class="interior__text text">
+						<div class="interior__content-block content-block">
+							<div class="content-block__text text">
 								<p>
 									Лаконичным продолжением внешнего минималистичного дизайна являются передние сиденья,
 									выполненные в очень органичной
@@ -188,8 +188,10 @@
 						</div>
 					</div>
 					<!-- Якщо потрібна навігація (ліворуч/праворуч) -->
-					<button type="button" class="swiper-button-prev _icon-arrow-left"></button>
-					<button type="button" class="swiper-button-next _icon-arrow-right"></button>
+					<div class="swiper-button">
+						<button type="button" class="swiper-button-prev _icon-arrow-left"></button>
+						<button type="button" class="swiper-button-next _icon-arrow-right"></button>
+					</div>
 				</div>
 			</section>
 			<div class="page__text-content text-content">
@@ -268,7 +270,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20240313151729"></script>
+	<script src="js/app.min.js?_v=20240313161846"></script>
 </body>
 
 </html>
