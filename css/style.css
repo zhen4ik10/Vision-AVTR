@@ -19,6 +19,12 @@
 [class*=_icon-]:before {
   display: block
 }
+._icon-arrow-right:before {
+  content: "\e904"
+}
+._icon-arrow-left:before {
+  content: "\e905"
+}
 ._icon-s-twitter:before {
   content: "\e900"
 }
@@ -448,10 +454,11 @@ body::after {
   aspect-ratio: 570/400;
   -o-object-fit: cover;
   object-fit: cover;
-  width: 100%
+  width: 100%;
+  margin-bottom: 0
 }
-.premier__content img:not(:last-child) {
-  margin-bottom: 25px
+.premier__button:not(:first-child) {
+  margin-top: 1.5625rem
 }
 .info-block > * {
   margin-bottom: 1.5625rem
