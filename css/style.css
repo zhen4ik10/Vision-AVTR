@@ -671,6 +671,10 @@ body::after {
     flex: 0 1 20.625rem;
     width: 27.5%
   }
+  picture .interior__image--small {
+    flex: 0 1 20.625rem;
+    width: 27.5%
+  }
   .content-block {
     justify-content: space-between
   }
