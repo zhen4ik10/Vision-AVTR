@@ -427,7 +427,7 @@ body::after {
   -o-object-fit: cover;
   object-fit: cover
 }
-.page {
+.page__inner {
   background: #070b1b linear-gradient(180deg,#070b1b 0,#2c3270 100%)
 }
 .concept__inner {
@@ -536,7 +536,8 @@ body::after {
   row-gap: 1.5625rem
 }
 .hero {
-  position: relative
+  position: relative;
+  background-color: #070b1b
 }
 .hero__image {
   position: absolute;
@@ -677,7 +678,7 @@ body::after {
     column-gap: 1.875rem
   }
   .page__hero {
-    margin-bottom: 9.375rem
+    padding-bottom: 9.375rem
   }
   .page__concept {
     margin-bottom: 9.375rem
@@ -811,7 +812,7 @@ body::after {
     margin-top: 5.625rem
   }
   .page__hero {
-    margin-bottom: 2.5rem
+    padding-bottom: 2.5rem
   }
   .page__concept {
     margin-bottom: 2.5rem
@@ -992,14 +993,14 @@ body::after {
       column-gap: calc(.9375rem + .9375 * (100vw - 20rem)/ 56.875)
     }
   }
-  @supports (margin-bottom:clamp(2.5rem ,0.0824175824rem + 12.0879120879vw ,9.375rem)) {
+  @supports (padding-bottom:clamp(2.5rem ,0.0824175824rem + 12.0879120879vw ,9.375rem)) {
     .page__hero {
-      margin-bottom: clamp(2.5rem ,.0824175824rem + 12.0879120879vw ,9.375rem)
+      padding-bottom: clamp(2.5rem ,.0824175824rem + 12.0879120879vw ,9.375rem)
     }
   }
-  @supports not (margin-bottom:clamp(2.5rem ,0.0824175824rem + 12.0879120879vw ,9.375rem)) {
+  @supports not (padding-bottom:clamp(2.5rem ,0.0824175824rem + 12.0879120879vw ,9.375rem)) {
     .page__hero {
-      margin-bottom: calc(2.5rem + 6.875 * (100vw - 20rem)/ 56.875)
+      padding-bottom: calc(2.5rem + 6.875 * (100vw - 20rem)/ 56.875)
     }
   }
   @supports (margin-bottom:clamp(2.5rem ,0.0824175824rem + 12.0879120879vw ,9.375rem)) {
