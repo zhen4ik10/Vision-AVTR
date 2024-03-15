@@ -519,7 +519,8 @@ body::after {
 .swiper-button-next::before,
 .swiper-button-prev::before {
   color: #e805ed;
-  font-size: .490625rem
+  font-size: .490625rem;
+  transition: all .3s ease-in-out
 }
 .picture img {
   aspect-ratio: 1920/900;
@@ -1360,6 +1361,10 @@ body::after {
   }
   .footer__policy:hover {
     text-decoration-color: transparent
+  }
+  .swiper-button-next:hover::before,
+  .swiper-button-prev:hover::before {
+    color: #37abff
   }
 }
 @media (any-hover:none) {
