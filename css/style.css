@@ -614,27 +614,12 @@ body::after {
   font-size: .490625rem;
   transition: all .3s ease-in-out
 }
-.picture {
-  overflow: hidden
-}
 .picture img {
   aspect-ratio: 1920/900;
   -o-object-fit: cover;
   object-fit: cover;
   width: 100%;
-  border-radius: var(--border-tl) var(--border-tr) 0 0;
-  -webkit-transform: translateY(100%);
-  transform: translateY(100%);
-  opacity: 0;
-  visibility: hidden;
-  transition: all .6s ease-in-out
-}
-.picture img._watcher-view {
-  transition: all .8s ease-in-out;
-  -webkit-transform: translateY(0);
-  transform: translateY(0);
-  opacity: 1;
-  visibility: visible
+  border-radius: var(--border-tl) var(--border-tr) 0 0
 }
 .text-content__container {
   display: flex;
